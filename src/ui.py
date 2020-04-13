@@ -1,6 +1,5 @@
 from gpiozero import LED, Button
 
-
 class UI:
 
     def __init__(self):

@@ -1,7 +1,7 @@
 from multiprocessing import Manager
 from multiprocessing import Process, Value
 
-from ui import UI
+from .ui import UI
 
 import time
 import os
@@ -9,10 +9,10 @@ import sys
 import signal
 os.system('sudo modprobe bcm2835-v4l2')
 os.system('sudo pigpiod')
-from move import Motors
-from move import Move
-from execute import Track
-from train import Train
+from .move import Motors
+from .move import Move
+from .execute import Track
+from .train import Train
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@ import os
 import signal
 import sys
 
-from ui import UI
+from .ui import UI
 
 class Motors:
 
