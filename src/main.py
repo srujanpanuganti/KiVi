@@ -51,9 +51,9 @@ if __name__ == "__main__":
             with Manager() as manager:
 
                 record = Value('i',0)
-                imu_lin_x = Value('i',0)
-                imu_lin_y = Value('i',0)
-                imu_ang_z = Value('i',0)
+                imu_lin_x = Value('d',0)
+                imu_lin_y = Value('d',0)
+                imu_ang_z = Value('d',0)
 
                 motion = Move(motors, ui)
 
@@ -86,9 +86,9 @@ if __name__ == "__main__":
                 print('[INFO]:[main] : motion initialized')
                 sys.stdout.flush()
 
-                imu_lin_x = Value('i',0)
-                imu_lin_y = Value('i',0)
-                imu_ang_z = Value('i',0)
+                imu_lin_x = Value('d',0)
+                imu_lin_y = Value('d',0)
+                imu_ang_z = Value('d',0)
 
                 tracker = Track()
 

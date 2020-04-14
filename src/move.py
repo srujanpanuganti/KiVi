@@ -145,7 +145,18 @@ class Motors:
 class Move:
 
     def __init__(self, motors: Motors, ui : UI):
+        self.motors = motors
         pass
+
+    def signal_handler(self, sig, frame):
+
+        print('[INFO] : You have pressed ctrl + c. exiting in motion!')
+        sys.stdout.flush()
+        # self.motion_status = False
+        self.motors.stop_peripherals()
+        # os.system('sudo killall pigpiod')
+        sys.exit()
+
 
     def update(self):
         pass

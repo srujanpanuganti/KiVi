@@ -15,6 +15,14 @@ class Track:
     def __init__(self):
         pass
 
+    def signal_handler(self, sig, frame):
+
+        print('[INFO] : You have pressed ctrl + c. exiting in tracker!')
+        sys.stdout.flush()
+        self.tracker_status = False
+        # os.system('sudo killall pigpiod')
+        sys.exit()
+
     def track(self, imu_lin_x, imu_lin_y, imu_ang_z):
         path = '/home/pi/roco_desk1/src/saved_models/path.npy'
         path_array = np.load(path)
