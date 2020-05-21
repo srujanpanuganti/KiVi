@@ -33,7 +33,6 @@ class Motors:
         self.pi = pigpio.pi()
         self.speed_factor  = 3
 
-
         if not self.pi.connected:
            print('[ERROR] : pi not connected')
            sys.stdout.flush()
@@ -78,11 +77,13 @@ class Motors:
         self.pi.set_PWM_dutycycle(self.motor_rR_PWM, int(255 / self.speed_factor))
 
         sleep(input)
+        self.halt_dc_motro()
 
-        self.pi.set_PWM_dutycycle(self.motor_fL_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_fR_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_rL_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_fL_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_fR_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_rL_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
+
 
     def reverse(self, input):
 
@@ -97,11 +98,12 @@ class Motors:
         self.pi.set_PWM_dutycycle(self.motor_rR_PWM, int(255 / self.speed_factor))
 
         sleep(input)
+        self.halt_dc_motro()
 
-        self.pi.set_PWM_dutycycle(self.motor_fL_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_fR_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_rL_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_fL_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_fR_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_rL_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
 
     def right(self, input):
 
@@ -116,11 +118,12 @@ class Motors:
         self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
 
         sleep(input)
+        self.halt_dc_motro()
 
-        self.pi.set_PWM_dutycycle(self.motor_fL_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_fR_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_rL_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_fL_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_fR_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_rL_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
 
     def left(self, input):
 
@@ -135,18 +138,19 @@ class Motors:
         self.pi.set_PWM_dutycycle(self.motor_rR_PWM, int(255 / self.speed_factor))
 
         sleep(input)
+        self.halt_dc_motro()
 
-        self.pi.set_PWM_dutycycle(self.motor_fL_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_fR_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_rL_PWM, 0)
-        self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_fL_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_fR_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_rL_PWM, 0)
+        # self.pi.set_PWM_dutycycle(self.motor_rR_PWM, 0)
 
 
 class Move:
 
     def __init__(self, motors: Motors, ui : UI):
         self.motors = motors
-        pass
+        # pass
 
     def signal_handler(self, sig, frame):
 
@@ -168,5 +172,34 @@ class Move:
         # I'll write script to translate some information to motor commands
 
 
+    def key_input(self, event):
+        # init_pins()
+        print("Key: " ,event)
+        key_press = event
+        tf=1
+        if key_press.lower() == 'w':
+            self.motors.forward(tf)
+        elif key_press.lower() == 's':
+            self.motors.reverse(tf)
+        elif key_press.lower() == 'a':
+            self.motors.left(tf)
+        elif key_press.lower() == 'd':
+            self.motors.right(tf)
+        else:
+            print("Invalid")
+            #gameover()
+            #gpio.cleanup()
 
 
+
+front_end = UI()
+driver = Motors()
+motion = Move( driver, front_end)
+
+while True:
+    sleep(1)
+    # print('Distance:',distance(),"cm")
+    key_press = input('Select Driving mode:')
+    if key_press == 'p':
+        break
+    motion.key_input(key_press)
