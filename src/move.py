@@ -365,6 +365,8 @@ class Motion:
 				count +=1
 
 				line = ser.readline()
+				print('[INFO][Motion][left]: line is', line)
+
 				if count > 10:
 					if flag ==0:
 						pwm2.start(val)
@@ -408,6 +410,9 @@ class Motion:
 						print("Thanks for Playing")
 						#file1.close()
 						break
+
+			else:
+				print("[INFO][Motion][left] : inside Else")
 
 	def right(self,rot):
 
