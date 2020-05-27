@@ -411,8 +411,8 @@ class Motion:
 						#file1.close()
 						break
 
-			else:
-				print("[INFO][Motion][left] : inside Else")
+			# else:
+			# 	print("[INFO][Motion][left] : inside Else")
 
 	def right(self,rot):
 
