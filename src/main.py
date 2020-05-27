@@ -282,8 +282,8 @@ while True:
 
     time.sleep(5)
 
-    move.right(50)  ## We basically give the angle how much it should turn
-    print('[INFO][main]: After right ')
+    move.right(10)  ## We basically give the angle how much it should turn#
+    # print('[INFO][main]: After right ')
 
     time.sleep(5)
 
