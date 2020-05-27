@@ -183,7 +183,7 @@ import RPi.GPIO as gpio
 motors = Motors()
 move = Motion(motors)
 
-motors.init()
+# motors.init()
 
 # for frame in camera.capture_continuous(rawCapture,format="bgr",use_video_port=False):
 #     img = frame.array
@@ -228,7 +228,7 @@ motors.init()
 while True:
 
     print('[INFO][main]: inside while ')
-    move.forward(10)
+    move.forward(100)
 
     print('[INFO][main]: After forward ')
 
@@ -272,7 +272,7 @@ while True:
 
     time.sleep(5)
 
-    move.reverse(10)
+    move.reverse(100)
     print('[INFO][main]: After reverse ')
 
     time.sleep(5)

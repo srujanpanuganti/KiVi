@@ -243,6 +243,9 @@ class Motion:
 
 
 	def forward(self, ticks):
+
+		print('[INFO][Motion][forward]: inside forward ')
+
 		self.motors.init()
 
 		counterBR = np.uint64(0)
@@ -291,6 +294,8 @@ class Motion:
 
 	def reverse(self,ticks):
 
+		print('[INFO][Motion][reverse]: inside reverse ')
+
 		self.motors.init()
 
 		counterBR = np.uint64(0)
@@ -335,6 +340,8 @@ class Motion:
 				break
 
 	def left(self,rot):
+
+		print('[INFO][Motion][left]: inside left ')
 
 		self.motors.init()
 		ticks= rot*5.85
@@ -403,6 +410,9 @@ class Motion:
 						break
 
 	def right(self,rot):
+
+		print('[INFO][Motion][right]: inside right ')
+
 		self.motors.init()
 		ticks= rot*5.85
 
