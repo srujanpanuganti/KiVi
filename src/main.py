@@ -228,7 +228,7 @@ move = Motion(motors)
 while True:
 
     print('[INFO][main]: inside while ')
-    move.forward(100)
+    move.forward(500)
 
     print('[INFO][main]: After forward ')
 
@@ -272,17 +272,17 @@ while True:
 
     time.sleep(5)
 
-    move.reverse(100)
+    move.reverse(500)
     print('[INFO][main]: After reverse ')
 
     time.sleep(5)
 
-    move.left(10)
+    move.left(500)
     print('[INFO][main]: After left ')
 
     time.sleep(5)
 
-    move.right(10)
+    move.right(500)
     print('[INFO][main]: After right ')
 
     time.sleep(5)
