@@ -228,8 +228,8 @@ move = Motion(motors)
 while True:
 
     print('[INFO][main]: inside while ')
-    move.forward(500)
 
+    move.forward(3000)
     print('[INFO][main]: After forward ')
 
     # if x>=345:
@@ -272,22 +272,26 @@ while True:
 
     time.sleep(5)
 
-    move.reverse(500)
-    print('[INFO][main]: After reverse ')
+    # move.reverse(3000)
+    # print('[INFO][main]: After reverse ')
 
-    time.sleep(5)
-
-    move.right(50)  ## We basically give the angle how much it should turn#
+    # time.sleep(5)
+    #
+    # move.right(50)  ## We basically give the angle how much it should turn#
     # print('[INFO][main]: After right ')
+    #
+    # time.sleep(5)
 
-    time.sleep(5)
-
-    move.left(50)   ## We basically give the angle how much it should turn
+    move.left(90)   ## We basically give the angle how much it should turn
     print('[INFO][main]: After left ')
 
     time.sleep(5)
 
 
+    move.forward(1500)
+    print('[INFO][main]: After forward ')
+
+    time.sleep(5)
 
     break
 
