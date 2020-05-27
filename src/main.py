@@ -112,7 +112,7 @@ import os
 import sys
 # import cv2
 # import gripper
-from .sonar import Sonar
+# from .sonar import Sonar
 import imutils
 from .move import Motors
 from .move import Motion
