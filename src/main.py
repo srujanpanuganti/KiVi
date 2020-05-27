@@ -277,12 +277,12 @@ while True:
 
     time.sleep(5)
 
-    move.left(500)
+    move.left(50)
     print('[INFO][main]: After left ')
 
     time.sleep(5)
 
-    move.right(500)
+    move.right(50)
     print('[INFO][main]: After right ')
 
     time.sleep(5)
