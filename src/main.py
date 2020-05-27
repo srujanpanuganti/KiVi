@@ -114,8 +114,8 @@ import sys
 # import gripper
 # from .sonar import Sonar
 import imutils
-from .move import Motors
-from .move import Motion
+from move import Motors
+from move import Motion
 # import IMU as imu
 import RPi.GPIO as gpio
 # from picamera.array import PiRGBArray
