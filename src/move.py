@@ -474,6 +474,7 @@ class Motion:
 					error = counterFL-counterBR
 					counterBR += error
 					if counterFL >= ticks or diff >= rot:
+
 						pwm1.stop()
 						pwm2.stop()
 					#if counterBR >= ticks or diff >= rot:

@@ -293,6 +293,12 @@ while True:
 
     time.sleep(5)
 
+
+    move.right(90)   ## We basically give the angle how much it should turn
+    print('[INFO][main]: After left ')
+
+    time.sleep(5)
+
     break
 
 
