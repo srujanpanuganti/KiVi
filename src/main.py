@@ -183,6 +183,7 @@ import RPi.GPIO as gpio
 motors = Motors()
 move = Motion(motors)
 
+motors.init()
 
 # for frame in camera.capture_continuous(rawCapture,format="bgr",use_video_port=False):
 #     img = frame.array

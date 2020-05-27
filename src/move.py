@@ -214,7 +214,6 @@ import serial
 class Motors:
 
 	def init(self):
-
 		gpio.setmode(gpio.BOARD)
 		gpio.setup(31, gpio.OUT)
 		gpio.setup(33, gpio.OUT)
