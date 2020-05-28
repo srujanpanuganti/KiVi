@@ -272,6 +272,10 @@ while True:
 
     time.sleep(5)
 
+
+    move.forward(3000)
+    print('[INFO][main]: After forward ')
+
     # move.reverse(3000)
     # print('[INFO][main]: After reverse ')
 
@@ -282,22 +286,22 @@ while True:
     #
     # time.sleep(5)
 
-    move.left(90)   ## We basically give the angle how much it should turn
-    print('[INFO][main]: After left ')
-
-    time.sleep(5)
-
-
-    move.forward(1500)
-    print('[INFO][main]: After forward ')
-
-    time.sleep(5)
+    # move.left(90)   ## We basically give the angle how much it should turn
+    # print('[INFO][main]: After left ')
+    #
+    # time.sleep(5)
 
 
-    move.right(90)   ## We basically give the angle how much it should turn
-    print('[INFO][main]: After left ')
-
-    time.sleep(5)
+    # move.forward(1500)
+    # print('[INFO][main]: After forward ')
+    #
+    # time.sleep(5)
+    #
+    #
+    # move.right(90)   ## We basically give the angle how much it should turn
+    # print('[INFO][main]: After left ')
+    #
+    # time.sleep(5)
 
     break
 
